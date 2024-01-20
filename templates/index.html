@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="container">
+        {% include 'alerts.html' %}
+
+        {% if images %}
+            <div class="row">
+                {% for image in images %}
+                    <div class="col-6">
+                        <img src="{{ image.image.url }}" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="lead">No images yet</p>
+        {% endif %}
+    </div>
+{% endblock %}

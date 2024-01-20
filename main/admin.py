@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from main.models import UploadImage
+
+
+@admin.register(UploadImage)
+class ModelNameAdmin(admin.ModelAdmin):
+    list_display = ['image','created_at']
